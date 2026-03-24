@@ -1,0 +1,7 @@
+﻿Problem 1: To get continuous input from user you can make while loop and set the condition to true and break the loop when your condition is met.
+Problem 2: To get the sum you should initialize a sum variable to store the sum of numbers and loop over each number and if it is even (using i%2==0 condition) add the number to sum.
+Problem 3: you can receive complex numbers with the complex function.
+Problem 4: you can check if the number is odd by reversing the usual condition using i%2!=0 and make multiple conditions using elif.
+Problem 5: To print the number next to each other you should end=”” in the print function.
+Problem 6: You split the string using the .split() and treat the string as an array with words as elements.
+Problem 7: You can find if the operating system is installed on the hardware or on virtual machine or a container through the terminal.
