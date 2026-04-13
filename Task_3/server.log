@@ -1,0 +1,8 @@
+INFO: System boot sequence initiated.
+WARNING: Disk space is reaching 80% capacity.
+error: Failed to connect to database.
+CRITICAL: Thermal threshold exceeded!
+warning: Update available for kernel.
+INFO: User 'admin' logged in.
+CRITICAL: Backup service failed.
+ERROR: Unauthorized access attempt detected.
