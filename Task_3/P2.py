@@ -1,4 +1,4 @@
-def MovePlayer(directions, positions):
+def move_player(directions, positions):
     x, y = positions
     for i in range(len(directions)):
         d = directions[i]
@@ -17,11 +17,11 @@ def MovePlayer(directions, positions):
 
         
 if __name__ == "__main__":
-    pos = (int(input("Enter X Starting Cordinates: ")),int(input("Enter Y Starting Coordinates: ")))
+    pos = (int(input("Enter X Starting Cordinates: ")), int(input("Enter Y Starting Coordinates: ")))
     n = int(input("Enter number of Instructions: "))
     inst = []
     for i in range(n):
         ins = input(f'Enter Intruction NO. {i+1}: ')
         inst.append(ins)
 
-    print(f'Current Position: {MovePlayer(inst, pos)}')
+    print(f'Current Position: {move_player(inst, pos)}')
