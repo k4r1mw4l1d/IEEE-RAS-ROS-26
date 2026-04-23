@@ -1,0 +1,13 @@
+1. What do symbols like -rw-r--r-- mean?
+It shows who can read, write, or run the file. It has 3 parts: Owner,  Group, Others.
+2. Which file is executable? How do you know?
+script.sh because it has x in its permissions: -rwxr-xr-x
+3. Which file is only accessible by its owner?
+secret.txt group and others have no permissions so only the owner can open it.
+4. What is the difference between file1.txt and secret.txt?
+file1.txt owner can read and write, everyone else can read
+secret.txt owner can read and write, no one else can access it at all
+5. What do the three parts represent?
+Owner the person who owns the file
+Group users in the same group
+Others everyone else on the system
