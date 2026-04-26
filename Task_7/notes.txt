@@ -1,0 +1,4 @@
+You can override a method of a parent class with declaring the same methodin the subclass
+All subclass inherit the attributes and the methods of a parent class
+Objects can be handled as a data type so you can add them to a list
+Polymorphism makes you use the same method name with different types of objects and each object responds with its own method 
