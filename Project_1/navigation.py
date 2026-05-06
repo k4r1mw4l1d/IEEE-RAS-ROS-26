@@ -1,85 +1,58 @@
+import heapq
+
 class no_fly_zone:
     def __init__(self, coordinates):
-        self.blocked = set()
-        for point in coordinates:
-            self.blocked.add((point[0], point[1]))
+        self.blocked = set((point[0], point[1]) for point in coordinates)
 
     @classmethod
     def from_rectangle(cls, x1, x2, y1, y2):
-        """Helper to create a zone from a rectangle instead of listing every point."""
-        coords = []
-        for x in range(min(x1, x2), max(x1, x2) + 1):
-            for y in range(min(y1, y2), max(y1, y2) + 1):
-                coords.append([x, y])
+        coords = [[x, y] for x in range(min(x1, x2), max(x1, x2) + 1) 
+                         for y in range(min(y1, y2), max(y1, y2) + 1)]
         return cls(coords)
 
     def check_forbidden(self, x, y):
         return (x, y) in self.blocked
 
-
 class navigator:
     def __init__(self):
         self.zones = []
 
-    def add_zone(self, coordinates):
-        """Register a no-fly zone as a cluster of coordinates."""
-        new_zone = no_fly_zone(coordinates)
-        self.zones.append(new_zone)
-
     def add_zone_rectangle(self, x1, x2, y1, y2):
-        """Convenience method to register a rectangular no-fly zone."""
-        new_zone = no_fly_zone.from_rectangle(x1, x2, y1, y2)
-        self.zones.append(new_zone)
+        label = f"Zone: ({x1},{y1}) to ({x2},{y2})"
+        self.zones.append({"label": label, "zone": no_fly_zone.from_rectangle(x1, x2, y1, y2)})
+
+    def remove_zone(self, index):
+        if 0 <= index < len(self.zones): self.zones.pop(index)
 
     def is_blocked(self, x, y):
-        """Check if a point is inside any registered no-fly zone."""
-        for zone in self.zones:
-            if zone.check_forbidden(x, y):
-                return True
-        return False
+        # Increased grid size to 20x20 for better maneuvering
+        if not (0 <= x <= 20 and 0 <= y <= 20): return True
+        return any(z["zone"].check_forbidden(x, y) for z in self.zones)
 
     def get_path(self, start, end):
-        current_x, current_y = start[0], start[1]
-        path = [start]
+        start, end = tuple(start), tuple(end)
+        # If the start is blocked (drone is inside a zone), we allow the first move
+        # to escape the zone, otherwise it's a "No path found" loop.
+        
+        open_set = []
+        heapq.heappush(open_set, (0, start))
+        came_from, g_score = {}, {start: 0}
+        
+        while open_set:
+            current = heapq.heappop(open_set)[1]
+            if current == end:
+                path = []
+                while current in came_from:
+                    path.append(list(current)); current = came_from[current]
+                path.append(list(start)); return path[::-1]
 
-        while [current_x, current_y] != end:
-            moved = False
-
-            candidates = []
-            if current_x < end[0]:
-                candidates.append((current_x + 1, current_y))
-            elif current_x > end[0]:
-                candidates.append((current_x - 1, current_y))
-            if current_y < end[1]:
-                candidates.append((current_x, current_y + 1))
-            elif current_y > end[1]:
-                candidates.append((current_x, current_y - 1))
-
-            # Try the preferred moves first
-            for nx, ny in candidates:
-                if not self.is_blocked(nx, ny):
-                    current_x, current_y = nx, ny
-                    path.append([current_x, current_y])
-                    moved = True
-                    break
-
-            if not moved:
-                detours = [
-                    (current_x + 1, current_y),
-                    (current_x - 1, current_y),
-                    (current_x, current_y + 1),
-                    (current_x, current_y - 1),
-                ]
-                for nx, ny in detours:
-                    if not self.is_blocked(nx, ny) and [nx, ny] not in path:
-                        current_x, current_y = nx, ny
-                        path.append([current_x, current_y])
-                        moved = True
-                        break
-
-            if not moved:
-                print(f"Path blocked: no route from {start} to {end}")
-                return None
-
-        print(f"Path found: {path}")
-        return path
+            for dx, dy in [(0,1), (0,-1), (1,0), (-1,0)]:
+                neighbor = (current[0]+dx, current[1]+dy)
+                if not self.is_blocked(*neighbor):
+                    tentative_g = g_score[current] + 1
+                    if neighbor not in g_score or tentative_g < g_score[neighbor]:
+                        came_from[neighbor] = current
+                        g_score[neighbor] = tentative_g
+                        f_score = tentative_g + abs(neighbor[0]-end[0]) + abs(neighbor[1]-end[1])
+                        heapq.heappush(open_set, (f_score, neighbor))
+        return None

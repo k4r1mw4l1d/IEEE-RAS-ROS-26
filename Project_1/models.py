@@ -7,43 +7,24 @@ class Drone:
         self.capacity = capacity
         self.position = [0, 0]
 
-
 class Package:
     def __init__(self, weight, destination):
         self.weight = weight 
         self.destination = destination
-
-
 
 class Fleet:
     def __init__(self):
         self.drones = []
 
     def save_to_json(self, filename="fleet_state.json"):
-        data = []
-        for d in self.drones:
-            info = {
-                "drone_id": d.drone_id, 
-                "battery": d.battery,
-                "capacity": d.capacity
-            }
-            data.append(info)
-
-        f = open(filename, 'w')
-        json.dump(data, f)
-        f.close()
-        print(f"Saved to {filename}")
+        data = [{"drone_id": d.drone_id, "battery": d.battery, "capacity": d.capacity} for d in self.drones]
+        with open(filename, 'w') as f:
+            json.dump(data, f)
 
     def load_from_json(self, filename="fleet_state.json"):
         try:
-            f = open(filename, 'r')
-            data = json.load(f)
-            f.close()
-
+            with open(filename, 'r') as f:
+                data = json.load(f)
+            self.drones = [Drone(d['drone_id'], d['capacity'], d['battery']) for d in data]
+        except FileNotFoundError:
             self.drones = []
-            for d in data:
-                new_drone = Drone(d['drone_id'], d['capacity'], d['battery'])
-                self.drones.append(new_drone)
-            print("Loaded Successfully")
-        except:
-            print("File not found")

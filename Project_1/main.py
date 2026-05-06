@@ -1,133 +1,115 @@
-import os
-import time
-from colorama import init, Fore, Style
-from models import Drone, Package
+import tkinter as tk
+from tkinter import messagebox, ttk
+from models import Drone, Package, Fleet
 from navigation import navigator
-from mission import calculate_flight_envelope, BASE_DRAIN
+from mission import Mission
+from simulation import Simulation
 
-init()  # initialize colorama for Windows
+class DroneGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("AeroPath Pro v2")
+        self.root.geometry("500x950")
+        
+        self.nav = navigator()
+        self.fleet = Fleet()
+        self.fleet.load_from_json()
+        self.setup_ui()
 
-GRID_SIZE = 15
-STEP_DELAY = 0.3   # seconds between each move
+    def setup_ui(self):
+        self.status_label = tk.Label(self.root, text="System Ready", fg="blue", font=("Arial", 10, "bold"))
+        self.status_label.pack(pady=10)
 
+        # Fleet Frame
+        ff = tk.LabelFrame(self.root, text="Drone Fleet Management", padx=10, pady=10)
+        ff.pack(fill="x", padx=20)
+        self.drone_selector = ttk.Combobox(ff, state="readonly")
+        self.drone_selector.pack(fill="x", pady=5)
+        self.drone_selector.bind("<<ComboboxSelected>>", self.on_drone_selected)
 
-def clear():
-    os.system("cls" if os.name == "nt" else "clear")
+        tk.Label(ff, text="ID:").pack(side="left")
+        self.new_id = tk.Entry(ff, width=8); self.new_id.pack(side="left", padx=2)
+        tk.Label(ff, text="Cap:").pack(side="left")
+        self.new_cap = tk.Entry(ff, width=4); self.new_cap.pack(side="left", padx=2)
+        tk.Button(ff, text="Add", command=self.add_drone, bg="green", fg="white").pack(side="left", padx=2)
+        tk.Button(ff, text="Del", command=self.delete_drone, bg="red", fg="white").pack(side="left", padx=2)
 
+        # Mission Frame
+        mf = tk.LabelFrame(self.root, text="Mission Planning", padx=10, pady=10)
+        mf.pack(fill="x", padx=20, pady=10)
+        tk.Label(mf, text="Weight (kg):").grid(row=0, column=0)
+        self.weight = tk.Entry(mf, width=5); self.weight.insert(0, "2"); self.weight.grid(row=0, column=1)
+        tk.Label(mf, text="Dest X,Y:").grid(row=0, column=2)
+        self.dest_x = tk.Entry(mf, width=4); self.dest_x.insert(0, "6"); self.dest_x.grid(row=0, column=3)
+        self.dest_y = tk.Entry(mf, width=4); self.dest_y.insert(0, "6"); self.dest_y.grid(row=0, column=4)
 
-def battery_bar(battery):
-    filled = int(battery / 5)
-    bar = "█" * filled + "░" * (20 - filled)
-    if battery > 50:
-        color = Fore.GREEN
-    elif battery > 20:
-        color = Fore.YELLOW
-    else:
-        color = Fore.RED
-    return f"{color}[{bar}] {battery:.1f}%{Style.RESET_ALL}"
+        # Zone Frame
+        zf = tk.LabelFrame(self.root, text="No-Fly Zone Management", padx=10, pady=10)
+        zf.pack(fill="x", padx=20)
+        self.zone_entry = tk.Entry(zf); self.zone_entry.insert(0, "2,4,2,4"); self.zone_entry.pack(fill="x")
+        tk.Button(zf, text="Register Zone", command=self.add_zone).pack(fill="x", pady=2)
+        self.zone_box = tk.Listbox(zf, height=4); self.zone_box.pack(fill="x")
+        tk.Button(zf, text="Delete Selected", command=self.del_zone).pack(fill="x")
 
+        tk.Button(self.root, text="LAUNCH SIMULATION", command=self.run_sim, bg="#2196F3", fg="white", height=2).pack(pady=20, fill="x", padx=20)
+        self.update_drone_dropdown()
 
-def draw_grid(drone_pos, destination, blocked_points, path_taken, info_lines):
-    clear()
-    print(Fore.WHITE + Style.BRIGHT + "AeroPath Terminal Simulation")
-    print("-" * (GRID_SIZE * 2 + 2) + Style.RESET_ALL)
+    def add_drone(self):
+        try:
+            self.fleet.drones.append(Drone(self.new_id.get(), capacity=float(self.new_cap.get())))
+            self.fleet.save_to_json(); self.update_drone_dropdown()
+        except: messagebox.showerror("Error", "Invalid Drone Data")
 
-    for row in range(GRID_SIZE):
-        line = "  "
-        for col in range(GRID_SIZE):
-            point = [col, GRID_SIZE - 1 - row]
+    def delete_drone(self):
+        self.fleet.drones = [d for d in self.fleet.drones if d.drone_id != self.drone_selector.get()]
+        self.fleet.save_to_json(); self.update_drone_dropdown()
 
-            if point == drone_pos:
-                line += Fore.GREEN + Style.BRIGHT + "D " + Style.RESET_ALL
-            elif point == destination:
-                line += Fore.YELLOW + Style.BRIGHT + "X " + Style.RESET_ALL
-            elif tuple(point) in blocked_points:
-                line += Fore.RED + "# " + Style.RESET_ALL
-            elif point in path_taken:
-                line += Fore.CYAN + ". " + Style.RESET_ALL
-            else:
-                line += "+ "
-        print(line)
+    def add_zone(self):
+        try:
+            c = [int(x.strip()) for x in self.zone_entry.get().split(",")]
+            self.nav.add_zone_rectangle(c[0], c[1], c[2], c[3])
+            self.update_zone_list()
+        except: messagebox.showerror("Error", "Format: x1,x2,y1,y2")
 
-    print("-" * (GRID_SIZE * 2 + 2))
-    print(Fore.WHITE + "  D = Drone    " +
-          Fore.YELLOW + "X = Destination    " +
-          Fore.RED + "# = No-fly zone    " +
-          Fore.CYAN + ". = Path taken" + Style.RESET_ALL)
-    print("-" * (GRID_SIZE * 2 + 2))
+    def del_zone(self):
+        sel = self.zone_box.curselection()
+        if sel: self.nav.remove_zone(sel[0]); self.update_zone_list()
 
-    for line in info_lines:
-        print(line)
+    def update_zone_list(self):
+        self.zone_box.delete(0, tk.END)
+        for z in self.nav.zones: self.zone_box.insert(tk.END, z["label"])
 
+    def update_drone_dropdown(self):
+        ids = [d.drone_id for d in self.fleet.drones]
+        self.drone_selector['values'] = ids
+        if ids: self.drone_selector.current(0); self.on_drone_selected(None)
 
-def run_simulation(drone, package, nav):
-    blocked_points = set()
-    for zone in nav.zones:
-        blocked_points.update(zone.blocked)
+    def on_drone_selected(self, e):
+        selected_id = self.drone_selector.get()
+        for d in self.fleet.drones:
+            if d.drone_id == selected_id:
+                self.cur_drone = d
+                # Updated label to show both Battery and Capacity
+                self.status_label.config(
+                    text=f"ID: {d.drone_id} | Battery: {d.battery:.1f}% | Capacity: {d.capacity}kg",
+                    fg="blue"
+                )
 
-    destination = package.destination
-
-    path = nav.get_path(drone.position, destination)
-    if path is None:
-        print(Fore.RED + "No valid path found!" + Style.RESET_ALL)
-        return
-
-    drain_per_step, total_drain, feasible = calculate_flight_envelope(drone, package, path)
-    if not feasible:
-        usable = drone.battery - 10
-        print(Fore.RED + f"Insufficient battery! Need {total_drain:.1f} but only {usable:.1f} usable." + Style.RESET_ALL)
-        return
-
-    path_taken = []
-    status = "In Flight"
-
-    for step in path:
-        if drone.battery <= 10:
-            status = Fore.RED + "CRITICAL - Returning to base!" + Style.RESET_ALL
-            return_path = nav.get_path(drone.position, [0, 0])
-            if return_path:
-                for rp in return_path:
-                    drone.position = list(rp)
-                    drone.battery = max(0, drone.battery - BASE_DRAIN)
-                    path_taken.append(list(rp))
-                    info = [
-                        f"  Drone    : {Fore.GREEN}{drone.drone_id}{Style.RESET_ALL}",
-                        f"  Status   : {status}",
-                        f"  Position : {drone.position}",
-                        f"  Battery  : {battery_bar(drone.battery)}",
-                    ]
-                    draw_grid(drone.position, destination, blocked_points, path_taken, info)
-                    time.sleep(STEP_DELAY)
-            status = Fore.YELLOW + "Returned to Base" + Style.RESET_ALL
-            break
-
-        drone.position = list(step)
-        drone.battery = max(0, drone.battery - drain_per_step)
-        path_taken.append(list(step))
-
-        if drone.position == destination:
-            status = Fore.GREEN + Style.BRIGHT + "Delivered!" + Style.RESET_ALL
-
-        info = [
-            f"  Drone    : {Fore.GREEN}{drone.drone_id}{Style.RESET_ALL}",
-            f"  Status   : {status}",
-            f"  Position : {drone.position}",
-            f"  Battery  : {battery_bar(drone.battery)}",
-            f"  Payload  : {package.weight}kg  |  Drain/step: {drain_per_step:.2f}",
-            f"  Steps    : {len(path_taken)} / {len(path)}",
-        ]
-        draw_grid(drone.position, destination, blocked_points, path_taken, info)
-        time.sleep(STEP_DELAY)
-
-    input("\n  Press Enter to exit...")
-
+    def run_sim(self):
+        try:
+            dest = [int(self.dest_x.get()), int(self.dest_y.get())]
+            package = Package(float(self.weight.get()), dest)
+            mission = Mission(self.cur_drone, package, self.nav)
+            mission.path = self.nav.get_path(self.cur_drone.position, dest)
+            
+            if mission.path and mission.prepare():
+                Simulation(mission).run()
+                self.cur_drone.battery = 100.0 # Reset battery for repeat testing
+                self.cur_drone.position = [0, 0]
+                self.on_drone_selected(None)
+                self.fleet.save_to_json()
+            else: messagebox.showerror("Error", "No path found! Target might be blocked.")
+        except Exception as e: messagebox.showerror("Error", str(e))
 
 if __name__ == "__main__":
-    drone = Drone("ZAG-01", capacity=10, battery=100)
-    package = Package(weight=5, destination=[10, 10])
-
-    nav = navigator()
-    nav.add_zone_rectangle(3, 3, 2, 8)
-    nav.add_zone_rectangle(6, 9, 5, 5)
-
-    run_simulation(drone, package, nav)
+    root = tk.Tk(); app = DroneGUI(root); root.mainloop()
