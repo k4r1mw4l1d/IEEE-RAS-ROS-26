@@ -1,1 +1,22 @@
-[{"drone_id": "D-01", "battery": 100.0, "capacity": 6.0}]
+[
+    {
+        "drone_id": "D-01",
+        "battery": 100.0,
+        "capacity": 6.0,
+        "position": [
+            0,
+            0
+        ],
+        "total_power_used": 40.00000000000006
+    },
+    {
+        "drone_id": "D-02",
+        "battery": 100.0,
+        "capacity": 7.0,
+        "position": [
+            0,
+            0
+        ],
+        "total_power_used": 89.99999999999993
+    }
+]

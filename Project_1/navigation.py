@@ -25,15 +25,11 @@ class navigator:
         if 0 <= index < len(self.zones): self.zones.pop(index)
 
     def is_blocked(self, x, y):
-        # Increased grid size to 20x20 for better maneuvering
         if not (0 <= x <= 20 and 0 <= y <= 20): return True
         return any(z["zone"].check_forbidden(x, y) for z in self.zones)
 
     def get_path(self, start, end):
         start, end = tuple(start), tuple(end)
-        # If the start is blocked (drone is inside a zone), we allow the first move
-        # to escape the zone, otherwise it's a "No path found" loop.
-        
         open_set = []
         heapq.heappush(open_set, (0, start))
         came_from, g_score = {}, {start: 0}
@@ -46,13 +42,13 @@ class navigator:
                     path.append(list(current)); current = came_from[current]
                 path.append(list(start)); return path[::-1]
 
-            for dx, dy in [(0,1), (0,-1), (1,0), (-1,0)]:
-                neighbor = (current[0]+dx, current[1]+dy)
+            for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+                neighbor = (current[0] + dx, current[1] + dy)
                 if not self.is_blocked(*neighbor):
                     tentative_g = g_score[current] + 1
                     if neighbor not in g_score or tentative_g < g_score[neighbor]:
                         came_from[neighbor] = current
                         g_score[neighbor] = tentative_g
-                        f_score = tentative_g + abs(neighbor[0]-end[0]) + abs(neighbor[1]-end[1])
+                        f_score = tentative_g + abs(neighbor[0] - end[0]) + abs(neighbor[1] - end[1])
                         heapq.heappush(open_set, (f_score, neighbor))
         return None
