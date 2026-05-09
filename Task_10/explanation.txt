@@ -1,0 +1,5 @@
+Node is a program that does one job the trutlesim draws the turtle and the teleop read the keyboard
+
+Topic is a communication channel where nodes pusblish data to or subscribe to receive data from them
+
+Service is like a server which nodes can request data from but they can't publish data to it
