@@ -1,0 +1,38 @@
+[0.497s] Invoking command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/traffic_manager build --build-base /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build install --record /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/install.log --single-version-externally-managed install_data
+[0.664s] running egg_info
+[0.664s] creating ../build/traffic_manager/traffic_manager.egg-info
+[0.675s] writing ../build/traffic_manager/traffic_manager.egg-info/PKG-INFO
+[0.675s] writing dependency_links to ../build/traffic_manager/traffic_manager.egg-info/dependency_links.txt
+[0.675s] writing requirements to ../build/traffic_manager/traffic_manager.egg-info/requires.txt
+[0.675s] writing top-level names to ../build/traffic_manager/traffic_manager.egg-info/top_level.txt
+[0.675s] writing manifest file '../build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+[0.697s] reading manifest file '../build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+[0.698s] writing manifest file '../build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+[0.698s] running build
+[0.698s] running build_py
+[0.698s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build
+[0.698s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib
+[0.698s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager
+[0.698s] copying traffic_manager/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager
+[0.698s] copying traffic_manager/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager
+[0.698s] copying traffic_manager/traffic_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager
+[0.698s] running install
+[0.703s] running install_lib
+[0.714s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+[0.714s] copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+[0.714s] copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+[0.715s] copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build/lib/traffic_manager/traffic_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+[0.715s] byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/fleet_emulator.py to fleet_emulator.cpython-312.pyc
+[0.715s] byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/__init__.py to __init__.cpython-312.pyc
+[0.715s] byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/traffic_manger.py to traffic_manger.cpython-312.pyc
+[0.715s] running install_data
+[0.715s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/share/ament_index
+[0.715s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/share/ament_index/resource_index
+[0.715s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/share/ament_index/resource_index/packages
+[0.715s] copying resource/traffic_manager -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/share/ament_index/resource_index/packages
+[0.716s] copying package.xml -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/share/traffic_manager
+[0.716s] running install_egg_info
+[0.728s] Copying ../build/traffic_manager/traffic_manager.egg-info to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages/traffic_manager-0.0.0-py3.12.egg-info
+[0.728s] running install_scripts
+[0.805s] writing list of installed files to '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/install.log'
+[0.824s] Invoked command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/install/traffic_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/traffic_manager build --build-base /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/build install --record /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/build/traffic_manager/install.log --single-version-externally-managed install_data

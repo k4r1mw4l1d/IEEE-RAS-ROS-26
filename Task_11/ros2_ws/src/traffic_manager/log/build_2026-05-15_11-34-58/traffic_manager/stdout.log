@@ -1,0 +1,36 @@
+running egg_info
+creating build/traffic_manager/traffic_manager.egg-info
+writing build/traffic_manager/traffic_manager.egg-info/PKG-INFO
+writing dependency_links to build/traffic_manager/traffic_manager.egg-info/dependency_links.txt
+writing requirements to build/traffic_manager/traffic_manager.egg-info/requires.txt
+writing top-level names to build/traffic_manager/traffic_manager.egg-info/top_level.txt
+writing manifest file 'build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+reading manifest file 'build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+writing manifest file 'build/traffic_manager/traffic_manager.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager
+copying traffic_manager/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager
+copying traffic_manager/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager
+copying traffic_manager/traffic_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager
+running install
+running install_lib
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/build/lib/traffic_manager/traffic_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/fleet_emulator.py to fleet_emulator.cpython-312.pyc
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager/traffic_manger.py to traffic_manger.cpython-312.pyc
+running install_data
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/share/ament_index
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/share/ament_index/resource_index
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/share/ament_index/resource_index/packages
+copying resource/traffic_manager -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/share/ament_index/resource_index/packages
+copying package.xml -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/share/traffic_manager
+running install_egg_info
+Copying build/traffic_manager/traffic_manager.egg-info to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/install/traffic_manager/lib/python3.12/site-packages/traffic_manager-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_11/ros2_ws/src/traffic_manager/build/traffic_manager/install.log'

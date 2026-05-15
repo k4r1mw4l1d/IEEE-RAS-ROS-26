@@ -4,8 +4,6 @@ def safe_divide():
         num2 = float(input("Enter the denominator: "))
         result = num1 / num2
         print(f"Result: {num1} / {num2} = {result}")
-    except ValueError:
-        print("Error: Please enter valid numbers, not text!")
     except ZeroDivisionError:
         print("Error: Cannot divide by zero!")
 

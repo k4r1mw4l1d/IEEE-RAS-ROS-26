@@ -1,0 +1,3 @@
+[console_scripts]
+fleet_emulator = traffic_manager.fleet_emulator:main
+traffic_manager = traffic_manager.traffic_manager:main

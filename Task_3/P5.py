@@ -10,4 +10,4 @@ if __name__ == "__main__":
     items_bought = ["apple", "banana", "apple"]
 
     bill = calculate_bill(prices, items_bought)
-    print(bill)  # Output: 1.3
+    print(bill)
