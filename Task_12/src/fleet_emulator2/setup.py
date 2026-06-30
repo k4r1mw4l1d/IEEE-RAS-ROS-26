@@ -1,0 +1,27 @@
+from setuptools import find_packages, setup
+
+package_name = 'fleet_emulator2'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/traffic_manager']),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='Karim Walid',
+    maintainer_email='karim@example.com',
+    description='Fleet emulation and traffic management package',
+    license='Apache-2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'robot_emulator_node = fleet_emulator2.fleet_emulator:main',
+            'traffic_manager_node = fleet_emulator2.fleet_manger:main',
+        ],
+    },
+)

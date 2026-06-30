@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: traffic-manager
+Version: 0.0.0
+Summary: Traffic management and collision avoidance emulator
+Maintainer: Karim Walid
+Maintainer-email: karim@example.com
+License: Apache-2.0

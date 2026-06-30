@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/fleet_emulator2/fleet_emulator2.egg-info/PKG-INFO
+writing dependency_links to ../../build/fleet_emulator2/fleet_emulator2.egg-info/dependency_links.txt
+writing entry points to ../../build/fleet_emulator2/fleet_emulator2.egg-info/entry_points.txt
+writing requirements to ../../build/fleet_emulator2/fleet_emulator2.egg-info/requires.txt
+writing top-level names to ../../build/fleet_emulator2/fleet_emulator2.egg-info/top_level.txt
+reading manifest file '../../build/fleet_emulator2/fleet_emulator2.egg-info/SOURCES.txt'
+writing manifest file '../../build/fleet_emulator2/fleet_emulator2.egg-info/SOURCES.txt'
+running build
+running build_py
+copying fleet_emulator2/fleet_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+copying fleet_emulator2/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+running install
+running install_lib
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/fleet_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/fleet_manger.py to fleet_manger.cpython-312.pyc
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/fleet_emulator.py to fleet_emulator.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/fleet_emulator2/fleet_emulator2.egg-info to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2-0.0.0-py3.12.egg-info
+running install_scripts
+Installing robot_emulator_node script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/fleet_emulator2
+Installing traffic_manager_node script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/fleet_emulator2
+writing list of installed files to '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/install.log'

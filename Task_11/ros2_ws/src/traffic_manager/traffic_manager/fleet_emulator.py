@@ -74,6 +74,7 @@ def main():
     try:
         executor.spin()
     except KeyboardInterrupt:
+	print("Aborting operation")
         pass
     finally:
         for node in nodes:

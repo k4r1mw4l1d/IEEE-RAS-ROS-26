@@ -134,6 +134,7 @@ def main():
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
+	print("Abort")
         pass
     finally:
         node.destroy_node()
