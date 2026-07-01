@@ -1,0 +1,3 @@
+[console_scripts]
+robot_emulator_node = traffic_manager.robot_emulator:main
+traffic_manager_node = traffic_manager.traffic_manager:main

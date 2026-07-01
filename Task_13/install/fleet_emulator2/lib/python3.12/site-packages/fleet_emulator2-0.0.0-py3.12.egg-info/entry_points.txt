@@ -1,0 +1,3 @@
+[console_scripts]
+robot_emulator_node = fleet_emulator2.fleet_emulator:main
+traffic_manager_node = fleet_emulator2.file_manger:main

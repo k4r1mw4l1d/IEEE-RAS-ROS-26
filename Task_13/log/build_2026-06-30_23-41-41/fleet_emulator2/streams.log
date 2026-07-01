@@ -1,0 +1,28 @@
+[1.374s] Invoking command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/src/fleet_emulator2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/fleet_emulator2 build --build-base /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build install --record /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/install.log --install-scripts $base/lib/fleet_emulator2 --single-version-externally-managed install_data
+[1.755s] running egg_info
+[1.778s] writing ../../build/fleet_emulator2/fleet_emulator2.egg-info/PKG-INFO
+[1.778s] writing dependency_links to ../../build/fleet_emulator2/fleet_emulator2.egg-info/dependency_links.txt
+[1.778s] writing entry points to ../../build/fleet_emulator2/fleet_emulator2.egg-info/entry_points.txt
+[1.778s] writing requirements to ../../build/fleet_emulator2/fleet_emulator2.egg-info/requires.txt
+[1.779s] writing top-level names to ../../build/fleet_emulator2/fleet_emulator2.egg-info/top_level.txt
+[2.556s] reading manifest file '../../build/fleet_emulator2/fleet_emulator2.egg-info/SOURCES.txt'
+[2.557s] writing manifest file '../../build/fleet_emulator2/fleet_emulator2.egg-info/SOURCES.txt'
+[2.557s] running build
+[2.557s] running build_py
+[2.557s] copying fleet_emulator2/fleet_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+[2.557s] copying fleet_emulator2/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+[2.558s] running install
+[2.566s] running install_lib
+[2.590s] copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/fleet_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+[2.591s] copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/fleet_emulator.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+[2.591s] byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/fleet_manger.py to fleet_manger.cpython-312.pyc
+[2.593s] byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/fleet_emulator.py to fleet_emulator.cpython-312.pyc
+[2.594s] running install_data
+[2.594s] running install_egg_info
+[2.617s] removing '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2-0.0.0-py3.12.egg-info' (and everything under it)
+[2.617s] Copying ../../build/fleet_emulator2/fleet_emulator2.egg-info to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2-0.0.0-py3.12.egg-info
+[2.618s] running install_scripts
+[2.770s] Installing robot_emulator_node script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/fleet_emulator2
+[2.770s] Installing traffic_manager_node script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/fleet_emulator2
+[2.770s] writing list of installed files to '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/install.log'
+[2.808s] Invoked command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/src/fleet_emulator2' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/fleet_emulator2 build --build-base /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build install --record /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/install.log --install-scripts $base/lib/fleet_emulator2 --single-version-externally-managed install_data

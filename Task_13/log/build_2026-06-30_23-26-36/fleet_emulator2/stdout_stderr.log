@@ -1,0 +1,26 @@
+running egg_info
+creating ../build/fleet_emulator2/traffic_manager.egg-info
+writing ../build/fleet_emulator2/traffic_manager.egg-info/PKG-INFO
+writing dependency_links to ../build/fleet_emulator2/traffic_manager.egg-info/dependency_links.txt
+writing entry points to ../build/fleet_emulator2/traffic_manager.egg-info/entry_points.txt
+writing requirements to ../build/fleet_emulator2/traffic_manager.egg-info/requires.txt
+writing top-level names to ../build/fleet_emulator2/traffic_manager.egg-info/top_level.txt
+writing manifest file '../build/fleet_emulator2/traffic_manager.egg-info/SOURCES.txt'
+reading manifest file '../build/fleet_emulator2/traffic_manager.egg-info/SOURCES.txt'
+writing manifest file '../build/fleet_emulator2/traffic_manager.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+copying fleet_emulator2/file_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+copying fleet_emulator2/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2
+running install
+running install_lib
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/file_manger.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+copying /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/build/fleet_emulator2/build/lib/fleet_emulator2/__init__.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/file_manger.py to file_manger.cpython-312.pyc
+byte-compiling /home/karims/Desktop/IEEE-RAS-ROS-26/Task_12/install/fleet_emulator2/lib/python3.12/site-packages/fleet_emulator2/__init__.py to __init__.cpython-312.pyc
+running install_data
+error: can't copy 'resource/traffic_manager': doesn't exist or not a regular file
