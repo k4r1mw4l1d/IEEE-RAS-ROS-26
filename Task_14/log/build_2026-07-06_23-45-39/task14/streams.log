@@ -1,0 +1,28 @@
+[0.990s] Invoking command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/build --no-deps symlink_data
+[1.267s] running develop
+[1.410s] running egg_info
+[1.411s] creating task14.egg-info
+[1.425s] writing task14.egg-info/PKG-INFO
+[1.425s] writing dependency_links to task14.egg-info/dependency_links.txt
+[1.425s] writing entry points to task14.egg-info/entry_points.txt
+[1.425s] writing requirements to task14.egg-info/requires.txt
+[1.425s] writing top-level names to task14.egg-info/top_level.txt
+[1.425s] writing manifest file 'task14.egg-info/SOURCES.txt'
+[1.994s] reading manifest file 'task14.egg-info/SOURCES.txt'
+[1.994s] writing manifest file 'task14.egg-info/SOURCES.txt'
+[2.010s] running build_ext
+[2.011s] Creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/python3.12/site-packages/task14.egg-link (link to .)
+[2.011s] Installing autonomous_mover script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/task14
+[2.011s] 
+[2.011s] Installed /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14
+[2.012s] running symlink_data
+[2.012s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index
+[2.012s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index
+[2.012s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index/packages
+[2.012s] symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/resource/task14 -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index/packages
+[2.012s] symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/package.xml -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14
+[2.012s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/launch
+[2.012s] symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/launch/gazebo_autonomous.launch.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/launch
+[2.012s] creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/worlds
+[2.012s] symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/worlds/task14_world.sdf -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/worlds
+[2.048s] Invoked command in '/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/build --no-deps symlink_data

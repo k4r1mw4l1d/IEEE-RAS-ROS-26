@@ -1,0 +1,2 @@
+[console_scripts]
+autonomous_mover = task14.autonomous_mover:main

@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+<world name="task14">
+
+    <!-- Physics and Simulation Systems Plugins -->
+    <plugin
+        filename="gz-sim-physics-system"
+        name="gz::sim::systems::Physics"/>
+
+    <plugin
+        filename="gz-sim-user-commands-system"
+        name="gz::sim::systems::UserCommands"/>
+
+    <plugin
+        filename="gz-sim-scene-broadcaster-system"
+        name="gz::sim::systems::SceneBroadcaster"/>
+
+    <!-- Light Source -->
+    <light name="sun" type="directional">
+        <pose>0 0 10 0 0 0</pose>
+    </light>
+
+    <!-- Ground Plane -->
+    <model name="ground">
+        <static>true</static>
+        <link name="link">
+            <collision name="collision">
+                <geometry>
+                    <plane>
+                        <normal>0 0 1</normal>
+                        <size>20 20</size>
+                    </plane>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <plane>
+                        <normal>0 0 1</normal>
+                        <size>20 20</size>
+                    </plane>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+
+    <!-- ==================== MAZE WALLS ==================== -->
+    <!-- All walls are 0.5m high and use a solid white visual material -->
+
+    <!-- Top Wall -->
+    <model name="top_wall">
+        <static>true</static>
+        <pose>0 3 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>5.15 0.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>5.15 0.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Left Outer Wall -->
+    <model name="left_outer_wall">
+        <static>true</static>
+        <pose>-2.5 0.75 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>0.15 4.65 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>0.15 4.65 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Left Step Horizontal Wall -->
+    <model name="left_step_horizontal">
+        <static>true</static>
+        <pose>-1.625 -1.5 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>1.9 0.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>1.9 0.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Left Step Vertical Wall -->
+    <model name="left_step_vertical">
+        <static>true</static>
+        <pose>-0.75 -2.25 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>0.15 1.65 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>0.15 1.65 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Right Outer Wall -->
+    <model name="right_outer_wall">
+        <static>true</static>
+        <pose>2.5 1.5 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>0.15 3.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>0.15 3.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Right Main Horizontal Wall -->
+    <model name="right_main_horizontal">
+        <static>true</static>
+        <pose>1.125 0 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>2.9 0.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>2.9 0.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Right Channel Vertical Wall -->
+    <model name="right_channel_vertical">
+        <static>true</static>
+        <pose>0.75 -1.5 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>0.15 3.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>0.15 3.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Inner Spiral Vertical Wall -->
+    <model name="inner_spiral_vertical">
+        <static>true</static>
+        <pose>-0.25 0.75 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>0.15 1.65 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>0.15 1.65 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- Inner Spiral Top Horizontal Wall -->
+    <model name="inner_spiral_horizontal">
+        <static>true</static>
+        <pose>0.5 1.5 0.25 0 0 0</pose>
+        <link name="link">
+            <collision name="collision">
+                <geometry><box><size>1.65 0.15 0.5</size></box></geometry>
+            </collision>
+            <visual name="visual">
+                <geometry><box><size>1.65 0.15 0.5</size></box></geometry>
+                <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+    <!-- ==================== ROBOT SPAWN ==================== -->
+    <!-- Positioned directly at the bottom entry gate facing into the maze -->
+    <include>
+        <uri>model://turtlebot3_waffle</uri>
+        <name>turtlebot3</name>
+        <pose>0 -2.5 0.05 0 0 1.5708</pose>
+    </include>
+
+</world>
+</sdf>

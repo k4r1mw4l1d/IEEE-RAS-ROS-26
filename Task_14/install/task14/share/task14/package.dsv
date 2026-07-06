@@ -1,0 +1,9 @@
+source;share/task14/hook/pythonpath.ps1
+source;share/task14/hook/pythonpath.dsv
+source;share/task14/hook/pythonpath.sh
+source;share/task14/hook/ament_prefix_path.ps1
+source;share/task14/hook/ament_prefix_path.dsv
+source;share/task14/hook/ament_prefix_path.sh
+source;../../build/task14/share/task14/hook/pythonpath_develop.ps1
+source;../../build/task14/share/task14/hook/pythonpath_develop.dsv
+source;../../build/task14/share/task14/hook/pythonpath_develop.sh

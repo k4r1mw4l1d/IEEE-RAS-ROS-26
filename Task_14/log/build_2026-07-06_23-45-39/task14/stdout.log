@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating task14.egg-info
+writing task14.egg-info/PKG-INFO
+writing dependency_links to task14.egg-info/dependency_links.txt
+writing entry points to task14.egg-info/entry_points.txt
+writing requirements to task14.egg-info/requires.txt
+writing top-level names to task14.egg-info/top_level.txt
+writing manifest file 'task14.egg-info/SOURCES.txt'
+reading manifest file 'task14.egg-info/SOURCES.txt'
+writing manifest file 'task14.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/python3.12/site-packages/task14.egg-link (link to .)
+Installing autonomous_mover script to /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/lib/task14
+
+Installed /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14
+running symlink_data
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index/packages
+symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/resource/task14 -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/ament_index/resource_index/packages
+symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/package.xml -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/launch
+symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/launch/gazebo_autonomous.launch.py -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/launch
+creating /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/worlds
+symbolically linking /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/build/task14/worlds/task14_world.sdf -> /home/karims/Desktop/IEEE-RAS-ROS-26/Task_14/install/task14/share/task14/worlds

@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+launch/gazebo_autonomous.launch.py
+resource/task14
+task14/__init__.py
+task14/autonomous_mover.py
+task14.egg-info/PKG-INFO
+task14.egg-info/SOURCES.txt
+task14.egg-info/dependency_links.txt
+task14.egg-info/entry_points.txt
+task14.egg-info/requires.txt
+task14.egg-info/top_level.txt
+task14.egg-info/zip-safe
+worlds/task14_world.sdf
